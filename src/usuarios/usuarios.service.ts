@@ -12,4 +12,20 @@ export class UsuariosService {
          await this.db.read();
          return this.db.data.users;
     }
+    async  new() {
+    const usuario = { id: 3, name: 'Pedro', email: 'espacio@gmail.com' };
+    await this.db.read();
+    this.db.data.users.push(usuario);
+    console.log(this.db.data);
+    this.db.write();
+    return usuario;
+  }
+  async nuevo(user: any) {
+    await this.db.read();
+    this.db.data.users.push(user);
+    console.log(this.db.data);
+    this.db.write();
+    return user;
+  }
+
 }
