@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
+import IUsuario from './interfaces/IUsuario';
 @Injectable()
 export class UsuariosService {
     private db: Low<any>;
@@ -8,7 +9,7 @@ export class UsuariosService {
         const adapter = new JSONFile('common/db/db.json');
         this.db = new Low(adapter, { users: [] });
     }
-    async getUsuarios(): Promise<any> {
+    async getUsuarios(): Promise<IUsuario[]> {
          await this.db.read();
          return this.db.data.users;
     }
@@ -20,7 +21,7 @@ export class UsuariosService {
     this.db.write();
     return usuario;
   }
-  async nuevo(user: any) {
+  async nuevo(user: IUsuario) {
     await this.db.read();
     this.db.data.users.push(user);
     console.log(this.db.data);
