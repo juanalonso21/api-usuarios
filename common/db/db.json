@@ -1,52 +1,33 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Juan",
-      "email": "espacio@gmail.com",
-      "edad": 30
-    },
-    {
-      "id": 2,
-      "name": "Ana",
-      "email": "espacio@gmail.com",
-      "edad": 30
-    },
-    {
-      "id": 3,
-      "name": "Pedro",
-      "email": "espacio@gmail.com",
-      "edad": 30
-    },
-    {
-      "id": 4,
-      "name": "alonso",
-      "email": "example@gmail.com",
-      "edad": 30
-    },
-    {
-      "id": 6,
-      "name": "alonso",
-      "email": "example@gmail.com",
-      "edad": 20
-    },
-    {
-      "id": 6,
-      "name": "alonso",
-      "email": "example@gmail.com",
-      "edad": "20"
-    },
-    {
-      "id": 6,
-      "name": "alonso",
-      "email": "example@gmail.com",
-      "edad": 50
-    },
-    {
-      "id": 6,
-      "name": "alonso",
-      "email": "example@gmail.com",
-      "edad": 50
+      "id": 32,
+      "name": "Juan123",
+      "email": "juan@gmail.com",
+      "edad": 58,
+      "telefonos": [
+        "678234567",
+        "231678345",
+        "666999333"
+      ],
+      "nif": "23364456R",
+      "direcciones": [
+        {
+          "calle": "Alameda",
+          "ciudad": "Almeria",
+          "pais": "España"
+        },
+        {
+          "calle": "Guillermo Reyna",
+          "ciudad": "Madrid",
+          "pais": "España"
+        },
+        {
+          "calle": "Guillermo Reyna",
+          "ciudad": "Madrid",
+          "pais": "España"
+        }
+      ]
     }
   ]
 }
