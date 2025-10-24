@@ -2,11 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 import { IUsuario, IResponse } from './interfaces/IUsuario';
+import { Repository } from 'typeorm';
+import {Usuario} from './entities/usuario.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 type Data = { users: IUsuario[] };
 @Injectable()
 export class UsuariosService {
     private db: Low<Data>;
-    constructor() {
+    constructor(@InjectRepository(Usuario) private readonly usuariosRepository: Repository<Usuario>) {
         const adapter = new JSONFile<Data>('common/db/db.json');
         this.db = new Low<Data>(adapter, { users: [] });
     }
@@ -16,10 +19,7 @@ export class UsuariosService {
     }
 
   async nuevo(user: IUsuario): Promise<IResponse> {
-    await this.db.read();
-    this.db.data.users.push(user);
-    console.log(this.db.data);
-    this.db.write();
+    await this.usuariosRepository.save(user);
     return { status: 201, message: 'Usuario creado', data: user };
   }
   async findOne(id: number): Promise<IUsuario | IResponse> {

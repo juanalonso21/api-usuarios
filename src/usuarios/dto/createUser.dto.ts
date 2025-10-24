@@ -20,16 +20,8 @@ export default class CreateUserDto {
     edad: number;
     @IsOptional() // El campo es opcional
     @IsString({ each: true }) // Validar que cada elemento del array es un string
-    @IsArray() // Validar que es un arraY
-    telefonos: string[];
+
     @IsString() // Funcion para validar que es un string
     @Matches(/^[0-9]{8}[A-Za-z]$/, { message: 'El NIF debe tener 8 números seguidos de una letra' }) // Validar formato de NIF
     nif: string;
-    @IsOptional() // El campo es opcional
-    @ValidateNested({ each: true
-        
-    }) // Validar cada elemento del array
-    @Type(() => AddressDto) // Transformar cada elemento del array a una instancia de AddressDto
-    @IsArray() // Validar que es un array
-    direcciones: AddressDto[]; // Array de direcciones
 }

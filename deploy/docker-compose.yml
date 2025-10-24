@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   db:
-    image: postgres:15
+    image: postgres
     container_name: postgresUsuarios
     restart: always
     environment:
