@@ -4,9 +4,7 @@ import { Type } from "class-transformer";
 export default class CreateUserDto {
     // Para los roles lo mejor es hacer una tabla aparte y relacionarla
     // @IsUUID() // Son 32 caracteres hexadecimales con 4 guiones
-    @IsNumber() // Funcion para validar que es un número
 
-    id: number;
     @IsOptional() // El campo es opcional
     @MinLength(3, { message: 'El nombre debe tener al menos 3 caracteres' }) // Validar longitud mínima
     @MaxLength(50, { message: 'El nombre debe tener como máximo 50 caracteres' }) // Validar longitud máxima

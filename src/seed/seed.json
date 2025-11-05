@@ -1,0 +1,27 @@
+[
+  {
+    "nif": "12345678A",
+    "nombre": "Juan Pérez",
+    "edad": 30
+  },
+  {
+    "nif": "87654321B",
+    "nombre": "María García",
+    "edad": 25
+  },
+  {
+    "nif": "45678912C",
+    "nombre": "Carlos López",
+    "edad": 40
+  },
+  {
+    "nif": "99887766D",
+    "nombre": "Lucía Sánchez",
+    "edad": 35
+  },
+  {
+    "nif": "11223344E",
+    "nombre": "Miguel Torres",
+    "edad": 28
+  }
+]
